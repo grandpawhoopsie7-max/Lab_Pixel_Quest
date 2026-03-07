@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerShoot : MonoBehaviour
+public class BigRightBullet : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -16,7 +16,7 @@ public class PlayerShoot : MonoBehaviour
 
     public Image cooldownBar;
 
-    void Update()
+    void Start()
     {
         // Cooldown timer
         if (currentCooldown > 0)
@@ -58,7 +58,7 @@ public class PlayerShoot : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = transform.up * bulletSpeed;
+            rb.velocity = transform.up * bulletSpeed;
         }
     }
 }
