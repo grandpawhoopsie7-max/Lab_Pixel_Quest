@@ -710,14 +710,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edd6237068d3b24890f7e918eac5305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 508187707815133229, guid: e526f495f347a6441916c8703536ace8, type: 3}
-  bulletSpawn: {fileID: 1442179157}
+  preFab: {fileID: 508187707815133229, guid: e526f495f347a6441916c8703536ace8, type: 3}
   bulletTrash: {fileID: 1629114352}
-  bulletSpeed: 10
-  bulletSize: 2
-  bulletColor: {r: 1, g: 0, b: 0, a: 1}
-  shootCooldown: 1
-  cooldownBar: {fileID: 0}
+  bulletSpawn: {fileID: 1442179157}
+  bulletForce: 20
 --- !u!114 &371426102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,8 +739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preFab: {fileID: 7854287240566403132, guid: 1ea6bd9350d50894899d6d0e9622592e, type: 3}
-  bulletTrash: {fileID: 1442179157}
-  bulletSpawn: {fileID: 1629114352}
+  bulletTrash: {fileID: 1629114352}
+  bulletSpawn: {fileID: 1442179157}
 --- !u!114 &371426104
 MonoBehaviour:
   m_ObjectHideFlags: 0

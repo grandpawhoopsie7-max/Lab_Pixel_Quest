@@ -195,6 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 1306876364857980075}
   minSpeed: 1
-  maxSpeed: 4
+  maxSpeed: 10
   deathTime: 30
   playerBullet: 1

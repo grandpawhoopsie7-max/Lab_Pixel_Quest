@@ -1,64 +1,56 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BigRightBullet : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+    public GameObject preFab;
     public Transform bulletTrash;
+    public Transform bulletSpawn;
 
-    public float bulletSpeed = 20f;
-    public float bulletSize = 2f;
-    public Color bulletColor = Color.red;
+    public float bulletForce = 20f; // Speed of the bullet
 
-    public float shootCooldown = 0.5f;
-    private float currentCooldown = 0f;
+    private const float Timer = 1.5f; // Longer cooldown than left click
+    private float _currentTime = 1.5f;
+    private bool _canShoot = true;
 
-    public Image cooldownBar;
-
-    void Start()
+    private void Update()
     {
-        // Cooldown timer
-        if (currentCooldown > 0)
-        {
-            currentCooldown -= Time.deltaTime;
-        }
+        TimerMethod();
+        ShootRight();
+    }
 
-        // Update cooldown bar
-        if (cooldownBar != null)
+    private void TimerMethod()
+    {
+        if (!_canShoot)
         {
-            cooldownBar.fillAmount = 1 - (currentCooldown / shootCooldown);
-        }
+            _currentTime -= Time.deltaTime;
 
-        // Right mouse button shoot
-        if (Input.GetMouseButtonDown(1) && currentCooldown <= 0)
-        {
-            Shoot();
-            currentCooldown = shootCooldown;
+            if (_currentTime < 0)
+            {
+                _canShoot = true;
+                _currentTime = Timer;
+            }
         }
     }
 
-    void Shoot()
+    private void ShootRight()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
-
-        bullet.transform.SetParent(bulletTrash);
-
-        // Make bullet bigger
-        bullet.transform.localScale *= bulletSize;
-
-        // Change bullet color
-        SpriteRenderer sr = bullet.GetComponent<SpriteRenderer>();
-        if (sr != null)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && _canShoot)
         {
-            sr.color = bulletColor;
-        }
+            GameObject bullet = Instantiate(preFab, bulletSpawn.position, bulletSpawn.rotation);
 
-        // Make bullet move faster
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.velocity = transform.up * bulletSpeed;
+            bullet.transform.SetParent(bulletTrash);
+
+            // Make the right-click bullet slightly bigger
+            bullet.transform.localScale *= 1.5f;
+
+            // Launch the bullet forward
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(bulletSpawn.forward * bulletForce, ForceMode.Impulse);
+            }
+
+            _canShoot = false;
         }
     }
 }
