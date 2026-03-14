@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +9,7 @@ public class GeoController : MonoBehaviour
 
     private Rigidbody2D rb;
     public int speed = 5;
-    public string nextLevel = "Scene_2";
+    public string nextLevel = "LEVEL 2";
     void Start()
     {
 
