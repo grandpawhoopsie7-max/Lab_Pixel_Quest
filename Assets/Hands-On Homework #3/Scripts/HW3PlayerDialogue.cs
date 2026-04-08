@@ -6,29 +6,42 @@ using UnityEngine;
 public class HW3PlayerDialogue : MonoBehaviour
 {
     public List<string> dialogue = new List<string>();
+
+    public GameObject portalPrefab; // assign in inspector
+
+    private Transform portalSpawnPoint;
+
     private bool canSpeak = false;
     private bool isSpeaking = false;
+
+    private bool spawnPortalAfterDialogue = false;
+    private bool portalSpawned = false;
+
     private GameObject _talkPanel;
     private TextMeshProUGUI _talkText;
     private int _talkIndex = 0;
 
     private void Start()
     {
-        _talkText = GameObject.Find(HW3Structs.GameObjects.talkText).GetComponent<TextMeshProUGUI>();
+        _talkText = GameObject.Find(HW3Structs.GameObjects.talkText)
+                    .GetComponent<TextMeshProUGUI>();
 
         _talkPanel = GameObject.Find(HW3Structs.GameObjects.talkPanel);
         _talkPanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isSpeaking && Input.GetKeyDown(KeyCode.E))
         {
+            // reached last dialogue line
             if (dialogue.Count - 1 == _talkIndex)
             {
                 isSpeaking = false;
                 _talkPanel.SetActive(false);
+
+                if (spawnPortalAfterDialogue)
+                    SpawnPortal();
             }
             else
             {
@@ -40,9 +53,24 @@ public class HW3PlayerDialogue : MonoBehaviour
         {
             isSpeaking = true;
             _talkPanel.SetActive(true);
+
             _talkIndex = 0;
-            _talkText.text = dialogue[_talkIndex]; 
+            _talkText.text = dialogue[_talkIndex];
         }
+    }
+
+    void SpawnPortal()
+    {
+        if (portalSpawned || portalSpawnPoint == null)
+            return;
+
+        Instantiate(
+            portalPrefab,
+            portalSpawnPoint.position,
+            portalSpawnPoint.rotation
+        );
+
+        portalSpawned = true;
     }
 
     public void SetCanSpeak(bool newCanSpeak)
@@ -59,5 +87,15 @@ public class HW3PlayerDialogue : MonoBehaviour
     {
         dialogue.Clear();
         dialogue.AddRange(newDialogue);
+    }
+
+    public void SetSpawnPortal(bool shouldSpawn)
+    {
+        spawnPortalAfterDialogue = shouldSpawn;
+    }
+
+    public void SetPortalSpawnPoint(Transform spawnPoint)
+    {
+        portalSpawnPoint = spawnPoint;
     }
 }

@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Geo_Quest/Scenes/HOORAY.unity
     guid: 40c8dd6d465e5994bbf86dd2d94d4374
+  - enabled: 1
+    path: Assets/Hands-On Homework #3/Scenes/HW3_Scene.unity
+    guid: f75dcdb9bf8a1cd45a73fee947bce6b7
+  - enabled: 1
+    path: Assets/Hands-On Homework #3/Scenes/HW3_Scene2.unity
+    guid: a0047ea286fdaad4292977c6227a6ee9
   m_configObjects: {}
