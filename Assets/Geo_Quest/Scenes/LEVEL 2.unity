@@ -2062,6 +2062,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2efb2847652a7a4eb2e2aecd462323e, type: 3}
+--- !u!1001 &1738892066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1.5624284
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3768616
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9894489
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0045112483
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.004680259
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.14473654
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.434
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.606
+      objectReference: {fileID: 0}
+    - target: {fileID: 686255349176218284, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 16.647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2415694623594286925, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
+      propertyPath: m_Name
+      value: Moby DICK Whale Decoration
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50b778e87c4f028419b31a3ed76de1f8, type: 3}
 --- !u!1001 &1753734504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2852,3 +2917,4 @@ SceneRoots:
   - {fileID: 622229482}
   - {fileID: 410921354}
   - {fileID: 1906098221}
+  - {fileID: 1738892066}
